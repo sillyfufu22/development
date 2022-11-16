@@ -1,0 +1,17 @@
+h1 {
+    font-family: "DM Serif Display", serif;
+}
+
+h4 {
+    font-family: "EB Garamond", serif;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+h2 {
+    font-family: "DM Serif Display", serif;
+}
+
+.foodImage {
+    padding: 20px;
+}

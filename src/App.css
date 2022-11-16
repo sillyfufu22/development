@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  max-width: 100%;
 }
 
 .App-logo {
@@ -35,4 +36,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.header {
+  padding: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logoName {
+  font-family: "EB Garamond", serif;
+  font-size: 100px;
+  padding: 100px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
