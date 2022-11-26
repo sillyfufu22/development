@@ -1,10 +1,11 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import foodData from "./food-data.json";
-import FoodItem from "./components/FoodItem/FoodItem.js";
+import AllFood from "./components/AllFood/AllFood.js";
 import FilterFoodType from "./components/FilterFood/FilterFoodType.js";
 import FilterFoodCuisine from "./components/FilterFood/FilterFoodCuisine";
-import CartItem from "./components/CartItem/CartItem";
+import SortItem from "./components/SortItem/SortItem";
+import Basket from "./components/Basket/Basket";
 
 /* ####### DO NOT TOUCH -- this makes the image URLs work ####### */
 foodData.forEach((item) => {
@@ -14,10 +15,10 @@ foodData.forEach((item) => {
 
 function App() {
 
-  const [items, setItem] = useState([]);
-  const [total, setTotal] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
   const [filterTypeValue, updateFoodType] = useState("All");
   const [filterCuisineValue, updateCuisineType] = useState("All");
+  const [sortPrice, updateSortPrice] = useState("All");
 
   const filteredFoodList = foodData.filter((food) => {
     if(filterTypeValue === "vegan" && filterCuisineValue === "appetizer") { 
@@ -44,22 +45,42 @@ function App() {
       return food.type === "vegetarian";
     } else if (filterTypeValue === "meat") {
       return food.type === "meat";
-    } else if (filterTypeValue === "appetizer") {
+    } else if (filterCuisineValue === "appetizer") {
       return food.cuisine === "appetizer";
-    } else if (filterTypeValue === "main") {
+    } else if (filterCuisineValue === "main") {
       return food.cuisine === "main";
-    } else if (filterTypeValue === "dessert") {
+    } else if (filterCuisineValue === "dessert") {
       return food.cuisine === "dessert";
     } else {
       return food;    
     }
   })
-  
-  const addToCart = (itemName, price) => {
-    setItem([...items, itemName]);
-    setTotal(total+price);
-    console.log(items);
-  }
+
+  const onAdd = (product) => {
+    const exist = cartItems.find((x) => x.id === product.id);
+    if (exist) {
+      setCartItems(
+        cartItems.map((x) =>
+          x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...product, qty: 1 }]);
+    }
+  };
+
+  const onRemove = (product) => {
+    const exist = cartItems.find((x) => x.id === product.id);
+    if (exist.qty === 1) {
+      setCartItems(cartItems.filter((x) => x.id !== product.id));
+    } else {
+      setCartItems(
+        cartItems.map((x) =>
+          x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
+        )
+      );
+    }
+  };
 
   function onFilterTypeSelected(filterTypeValue){
     updateFoodType(filterTypeValue);
@@ -69,9 +90,21 @@ function App() {
     updateCuisineType(filterCuisineValue);
   }
 
-  // const foodItems = filteredFoodList.map(item => (
-  //   <FoodItem prop1={item} updateClick={addToCart}/>
-  // ));
+  function onSortPriceSelected(sortPriceValue){
+    updateSortPrice(sortPriceValue);
+  }
+
+  filteredFoodList.sort((a,b) => {
+    if (sortPrice === "highlow") {
+      if (a.price < b.price) return 1;
+      else if (a.price > b.price) return -1;
+      else return 0;
+    } else if (sortPrice === "lowhigh") {
+      if (a.price > b.price) return 1;
+      else if (a.price < b.price) return -1;
+      else return 0;
+    } else return 0;
+  })
 
   return (
     <div className="App">
@@ -81,44 +114,25 @@ function App() {
         <h1 className="logoName">Mandalay</h1>
       </div>
 
-      
-
       <div class="container-fluid">
         <div class="row">
           <div className="foodItems" class="col-12 col-sm-12 col-md-8 col-lg-8">
 
-          <div className="filters">
-            <FilterFoodType filterValueSelected={onFilterTypeSelected}></FilterFoodType>
-            <FilterFoodCuisine filterValueSelected={onFilterCuisineSelected}></FilterFoodCuisine>
-          </div>
-
-            {/* {foodData.map((item, index) => (
-              <FoodItem prop1={item} prop2={index} updateClick={addToCart}/>
-            ))} */}
-            {/* <ul>{foodItems}</ul> */}
-
-            {filteredFoodList.map(item => (
-              <FoodItem prop1={item} updateClick={addToCart}/>
-            ))}
-
-            {/* {filteredFoodList} */}
-          </div>
-
-          <div class="col-12 col-md-4 col-lg-4">
-            <h2>Cart</h2>
-            {/* {items.map((item) => {
-              return <p>{item.name}</p>
-            })} */}
-            {/* <div>
-              {items.map(item => (
-                <CartItem prop1={item}/>
-              ))}
-            </div> */}
-
+            <div className="filters">
+              <FilterFoodType filterValueSelected={onFilterTypeSelected}></FilterFoodType>
+              <FilterFoodCuisine filterValueSelected={onFilterCuisineSelected}></FilterFoodCuisine>
+            </div>
             
+            <div className="sort">
+              <SortItem sortPriceSelected={onSortPriceSelected}></SortItem>
+            </div>
 
-            {items}
-            <h2>Total cost: {total} </h2> 
+            <AllFood foods={filteredFoodList} onAdd={onAdd}></AllFood>
+          </div>
+
+          <div className="cartSection" class="col-12 col-md-4 col-lg-4">
+            <h1 className="cart">Cart</h1>
+            <Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}></Basket>
           </div>
 
         </div>

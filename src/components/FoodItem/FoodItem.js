@@ -1,14 +1,26 @@
 import "./FoodItem.css";
 
-export default function FoodItem({prop1, updateClick}) {
+export default function FoodItem({food, onAdd}) {
     
     return (
         <div>
-            <img src={prop1.image} className="foodImage" height="300"/>
-            <h1>{prop1.name}</h1>
-            <h4>{prop1.description}</h4>
-            <h2>{prop1.price}</h2>
-            <button onClick={() => updateClick(prop1.name, prop1.price)}>Add to cart</button>
+            <img src={food.image} className="foodImage" height="300"/>
+            <h1>{food.name}</h1>
+
+            <div className="filterfields container">
+                <div className="row">
+                    <div className="col-6">
+                        <h4 className="fw-bold">{food.cuisine}</h4>
+                    </div>
+                    <div className="col-6">
+                        <h4 className="fw-bold">{food.type}</h4>
+                    </div>
+                </div>
+            </div>
+
+            <h4>{food.description}</h4>
+            <h2>{food.price}</h2>
+            <button className="addToCart" onClick={() => onAdd(food)}>Add to cart</button>
         </div>
     )
 }

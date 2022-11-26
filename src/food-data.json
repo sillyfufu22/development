@@ -1,37 +1,42 @@
 [
     {
+      "id": "1",
       "name": "Bean Fritters",
-      "description": "Ten bean fritters made from mashed kidney beans mixed with rice and glutinous rice flour. Served with garlic and cilantro sauce. Vegan.",
+      "description": "Ten bean fritters made from mashed kidney beans mixed with rice and glutinous rice flour. Served with garlic and cilantro sauce.",
       "type": "vegan",
       "cuisine": "appetizer",
       "price": 8.99,
       "image": "images/bean fritters.jpg"
     },
     {
+      "id": "2",
       "name": "Mont Lin Maya",
-      "description": "Called 'husband and wife snack', these seven crisp, round savory pancakes are made with a batter consisting of rice flour, quail eggs, chickpeas, and spring onions, fried in a special metal pan. Vegetarian.",
+      "description": "Called 'husband and wife snack', these seven crisp, round savory pancakes are made with a batter consisting of rice flour, quail eggs, chickpeas, and spring onions, fried in a special metal pan.",
       "type": "vegetarian",
       "cuisine": "appetizer",
       "price": 11.99,
       "image": "images/mont lin ma yar.jpeg"
     },
     {
+      "id": "3",
       "name": "La Phet Thote",
-      "description": "A beloved Burmese pastime food, this tea leaf salad is served with tomatoes, fried garlic slices, pumpkin seeds, and peanuts. Vegan.",
+      "description": "A beloved Burmese pastime food, this tea leaf salad is served with tomatoes, fried garlic slices, pumpkin seeds, and peanuts.",
       "type": "vegan",
       "cuisine": "appetizer",
       "price": 12.99,
       "image": "images/laphet thote.jpg.webp"
     },
     {
+      "id": "4",
       "name": "Chickpea Tofu Fritters",
-      "description": "Seven tofu fritters that are crispy on the outside but soft and fluffy on the inside. Served with garlic and cilantro sauce. Vegan.",
+      "description": "Seven tofu fritters that are crispy on the outside but soft and fluffy on the inside. Served with garlic and cilantro sauce.",
       "type": "vegan",
       "cuisine": "appetizer",
       "price": 8.99,
       "image": "images/tofu kyaw.jpeg"
     },
     {
+      "id": "5",
       "name": "Ohn No Khao Swe",
       "description": "Coconut noodle soup made with wheat noodles in a curried chicken and coconut milk broth thickened with gram flour and garnished with shallots, boiled eggs, cilantro, and lime.",
       "type": "meat",
@@ -40,6 +45,7 @@
       "image": "images/coconut noodles.jpg"
     },
     {
+      "id": "6",
       "name": "Mohinga",
       "description": "Rice noodle and fish soup made with gram flour, garlic, shallots, ginger, lemongrass, fish paste, fish sauce, and catfish. Garnished with shallots, cilantro, and boiled eggs.",
       "type": "meat",
@@ -48,6 +54,7 @@
       "image": "images/mohinga.jpg.webp"
     },
     {
+      "id": "7",
       "name": "Nan Gyi Thoke",
       "description": "Thick and round rice noodles tossed in a rich, nutty dressing made with very fine powder of toasted chickpeas, fragrant red oil filtered from a curry chicken, fish sauce and lime juice.",
       "type": "meat",
@@ -56,6 +63,7 @@
       "image": "images/nan gyi thoke.jpeg"
     },
     {
+      "id": "8",
       "name": "Shan Noodles",
       "description": "Chicken tomato sauce served over a bed of sticky rice noodle garnished with garlic, chilli and pickle toppings.",
       "type": "meat",
@@ -64,32 +72,36 @@
       "image": "images/shan noodles.jpg"
     },
     {
+      "id": "9",
       "name": "Sanwin Makin",
-      "description": "A traditional Burmese dessert made with semolina, condensed milk, butter, coconut milk, and poppy seeds. Garnished with coconut shavings. Vegetarian.",
+      "description": "A traditional Burmese dessert made with semolina, condensed milk, butter, coconut milk, and poppy seeds. Garnished with coconut shavings.",
       "type": "vegetarian",
       "cuisine": "dessert",
       "price": 6.99,
       "image": "images/sanwin makin.jpg"
     },
     {
+      "id": "10",
       "name": "Htoe Mont",
-      "description": "A glutinous rice cake cooked with raisins, cashews and coconut shavings. Vegan.",
+      "description": "A glutinous rice cake cooked with raisins, cashews and coconut shavings.",
       "type": "vegan",
       "cuisine": "dessert",
       "price": 8.99,
       "image": "images/htoe mont.jpg"
     },
     {
+      "id": "11",
       "name": "Bein Mont",
-      "description": "Rice flour Burmese pancakes garnished with coconut shavings, sesame, peanut, and poppy seeds. Served with jaggery syrup. Vegan.",
+      "description": "Rice flour Burmese pancakes garnished with coconut shavings, sesame, peanut, and poppy seeds. Served with jaggery syrup.",
       "type": "vegan",
       "cuisine": "dessert",
       "price": 5.99,
       "image": "images/bein mont.jpg"
     },
     {
+      "id": "12",
       "name": "Shwe Yin Aye",
-      "description": "Sweetened coconut milk served with sticky rice, sago pearls, pandan jelly noodles, coconut jelly, and white bread. Vegetarian.",
+      "description": "Sweetened coconut milk served with sticky rice, sago pearls, pandan jelly noodles, coconut jelly, and white bread.",
       "type": "vegetarian",
       "cuisine": "dessert",
       "price": 8.99,

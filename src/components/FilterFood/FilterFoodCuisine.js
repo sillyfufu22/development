@@ -8,7 +8,7 @@ const FilterFoodCuisine = (props) => {
     return (
         <div className="filter-area">
             <select name="type" onChange={onFilterValueChanged}>
-                <option value="all">All</option>
+                <option value="all">Filter Course (All)</option>
                 <option value="appetizer">Appetizer</option>
                 <option value="main">Main Course</option>
                 <option value="dessert">Dessert</option>

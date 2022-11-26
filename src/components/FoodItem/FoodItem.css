@@ -15,3 +15,43 @@ h2 {
 .foodImage {
     padding: 20px;
 }
+
+.addToCart {
+    margin-bottom: 40px;
+}
+
+.addToCart {
+  background-image: linear-gradient(92.88deg, #933708 10%, #a95607 30%, #d49504 60%);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: "DM Serif Display", serif;
+  font-size: 20px;
+  font-weight: 500;
+  height: 3rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.addToCart:hover {
+  box-shadow: #c68e17 0 1px 30px;
+  transition-duration: .1s;
+}
+
+@media (min-width: 768px) {
+  .addToCart {
+    padding: 0 2.6rem;
+  }
+}
+
+.filterfields {
+  color: #933708;
+}
